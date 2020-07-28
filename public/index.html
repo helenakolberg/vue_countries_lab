@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Countries</title>
     <script type="text/javascript" src="./js/bundle.js"></script>
+    <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
 
@@ -20,11 +21,12 @@
             </select>
 
             
-            <div class="selected-country">
-                <div class="name">{{filterCountry}}</div>
-                <!-- <div class="capital">{{filterCountry[capital]}}</div>
-                <div class="population">{{filterCountry[population]}}</div>
-                <div class="region">{{filterCountry[region]}}</div> -->
+            <div v-if="filterCountry" class="selected-country">
+                <h1 class="name">{{filterCountry.name}}</h1>
+                <div class="flag"><img v-bind:src="filterCountry.flag"></div>
+                <div class="capital">Capital: {{filterCountry.capital}}</div>
+                <div class="population">Population: {{filterCountry.population}}</div>
+                <div class="region">Region: {{filterCountry.region}}</div>
             </div>
     </div>
     
